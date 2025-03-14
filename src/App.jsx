@@ -1,37 +1,34 @@
-import './App.css'
-
-import BookCard from './components/BookCard'
-
-import capa_livro from './assets/cavernas_aco.jpg'
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/layout/NavBar.jsx';
+import Container from './components/layout/Container.jsx';
+import Home from './components/pages/Home.jsx';
+import CreateBook from './components/pages/CreateBook.jsx';
+import ListBook from './components/pages/ListBook.jsx';
 
 function App() {
-  
   return (
     <>
       <div>
 
-        <h1>Pw3 - WEBAPP - LIVRARIA</h1>
+        <BrowserRouter>
 
-        <BookCard 
-        titulo='As Cavernas de Aço' 
-        autor='Isaac Azimov'
-        imagem={capa_livro}/>
+          <Container>
 
-        {/* <BookCard 
-        titulo='Sol Desvelado' 
-        autor='Isaac Azimov'
-        imagem='Uma imagem vai aparecer aqui'/>
+            <Routes>
+              <Route path='/' element={<NavBar/>}>
 
-        <BookCard 
-        titulo='O Fim da Infancia' 
-        autor='Arthur C. Clark'
-        imagem='Uma imagem vai aparecer aqui'/>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/newBook' element={<CreateBook/>}/>
+                <Route path='/listBook' element={<ListBook/>}/>
 
-         <BookCard 
-        titulo='Neuromancer' 
-        autor='Willian Gibson'
-        imagem='Uma imagem vai aparecer aqui'/> */}
-      
+              </Route>
+            </Routes>
+
+          </Container>
+
+        </BrowserRouter>
+
       </div>
     </>
   )

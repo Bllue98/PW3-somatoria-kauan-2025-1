@@ -1,15 +1,20 @@
-import style from './BookCard.module.css'
+import style from './bookCards.module.css'
 import Button from './Button.jsx'
 
-const BookCard = ({titulo, autor, imagem})=>{
+const BookCards = ({title, autor, imagem})=>{
     return(
-        <div className={style.bookCard}>
-            <h3 className={style.title}>{titulo}</h3>
-            <p className={style.author}>{autor}</p>
-           <img className={style.img} src={imagem} alt="Capa: As Cavernas de Aço"/>
-           <Button label='DETALHE'></Button>
+        <div className={style.bookCards}>
+
+            <h3 className={style.title}>{title}</h3>
+
+            <p className={style.autor}>{autor}</p>
+
+            <img src={imagem} alt='Uma imagem' className={style.imagem}/>
+
+            <Button label="DETALHE"/>
+            
         </div>
     )
 }
 
-export default BookCard
+export default BookCards
